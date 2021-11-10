@@ -1,0 +1,102 @@
+body {
+	margin: 0;
+	padding: 0;
+	animation: skyDay 10s 1 reverse linear;
+	background-color: black;
+}
+
+#sun {
+	position: absolute;
+	bottom: 0;
+	width: 200px;
+	height: 200px;
+	background-color: yellow;
+	border-radius: 50%;
+	box-shadow: 0 0 100px orange;
+	left: 200px;
+	animation: sunUp 10s 1 reverse ease-in-out;
+}
+
+#horizon {
+	position: absolute;
+	bottom: 0;
+	width: 100vw;
+	height: 350px;
+	background-color: #010342;
+	animation: horizonDay 10s 1 reverse ease-in-out;
+}
+
+#mountains {
+	position: absolute;
+	bottom: 345px;
+	width: 100vw;
+	fill: #020461;
+	animation: mountainsDay 10s 1 reverse ease-in-out;
+}
+
+#moon {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	bottom: 0;
+	left: 150px;
+	background-color: lightgray;
+	border-radius: 50%;
+	box-shadow: 0 0 10px white;
+	animation: moonUp 10s 1 forwards ease-in-out;
+	animation-delay: 5s;
+}
+
+@keyframes moonUp {
+	from {
+		bottom: 0;
+		background-color: yellow;
+		box-shadow: 0 0 100px beige;
+	} to {
+		bottom: 65vh;
+		background-color: lightgray;
+		box-shadow: 0 0 10px white;
+	}
+}
+
+/* Keyframe Animation */
+@keyframes skyDay {
+	from {
+		background-color: black;
+	}
+	to {
+		background-color: lightblue;
+	}
+}
+
+@keyframes sunUp {
+	from {
+		bottom: 0;
+		background-color: orange;
+		box-shadow: 0 0 100px red;
+		width: 350px;
+		height: 350px;
+	} to {
+		bottom: 65vh;
+		background-color: yellow;
+		box-shadow: 0 0 100px yellow;
+		width: 250px;
+		height: 250px;
+	}
+}
+
+@keyframes horizonDay {
+	from {
+		background-color: #010342;
+	} to {
+		background-color: darkgreen;
+	}
+}
+
+@keyframes mountainsDay {
+	from {
+		fill: #020461;
+	} to {
+		fill: green;
+	}
+}

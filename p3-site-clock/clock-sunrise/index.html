@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scroll">
+	<title>Analog Clock</title>
+		<img src="sun.svg" class="sun">
+		<img src="moon.svg" class="moon">
+		<img src="landscape.svg" class="landscape">
+		<img src="ship.svg" class="ship">
+	<style type="text/css">]
+		body{
+
+			margin: 0;
+			background: black;
+			
+		
+		
+		}
+		main{
+			display: grid;
+			place-items: center;
+			height: 100wh;
+			padding-top: 5%;
+			
+
+		}
+		.html {
+  			background: black;
+ 			 overflow: hidden;
+		}
+
+		.clock {
+			width: 300px;
+			height: 300px;
+			border: 50px solid black;
+			border-radius: 50%;
+			padding: 20px;
+			background-color: purple;
+
+		}
+		.clock-face {
+			width: 100%;
+			height: 100%;
+			transform: translateY(-5px);
+		}
+		.hand{
+			width: 50%;
+			height: 5px;
+			background-color: white;
+			position: absolute;
+			top: 50%;
+			transform: rotate(90deg);
+			transform-origin: 100%;
+			border-radius: 10px;
+		}
+	
+		.hours {
+			background-color: white;
+
+		
+
+		}
+		.minutes {
+			background-color: turquoise;
+		
+		}
+		.seconds {
+			background-color: pink;
+			
+		}
+		.sun {
+			z-index: -3;
+			position: absolute;
+			width: 300px;
+ 			height: 300px;
+ 			animation: sunrise 10s 10 linear forwards;
+		}
+
+		.moon {
+			z-index: 2;
+			position: absolute;
+			width: 150px;
+			height: 150px;
+			animation: moonrise 10s 3 linear;
+			animation-delay: 6s;
+
+		}
+
+		.landscape {
+			position: absolute;
+			display: grid;
+			place-items: center;
+			width: 900px; bottom: auto;
+			bottom: 0px;
+			left: 105px;
+		}
+
+		.ship {
+			z-index: 2;
+			position: absolute;
+			width: 350px;
+			height: 350px;
+			animation: ship 10s 3 linear;
+			animation-delay: 15s;
+		}
+
+
+		@keyframes sunrise {
+			from {
+				left: 0;
+			}
+			to {
+				left: 1000px;
+			}
+		  0% {
+		    top: 50%;
+		  }
+		  100% {
+		    top: 15%;
+		  }
+}			
+		@keyframes moonrise {
+			from {
+				left: 0;
+			}
+			to {
+				left: 1000px;
+			}
+		  0% {
+		    top: 50%;
+		  }
+		  100% {
+		    top: 15%;
+		  }
+
+}			
+		@keyframes ship {
+			from {
+				left: 0;
+			}
+			to {
+				left: 1000px;
+			}
+		  0% {
+		    top: 50%;
+		  }
+		  100% {
+		    top: 15%;
+		  }
+}			
+
+	</style>
+</head>
+<body>
+	<main>
+		<!-- Main Clock Container -->
+		<div class="clock">
+			<!-- This contains the elements of the clock face -->
+			<div class="clock-face">
+				<div class="hand hours"></div>
+				<div class="hand minutes"></div>
+				<div class="hand seconds"></div>
+			</div>
+		</div>
+	</main>
+	<script type="text/javascript">
+		var hourHand = document.querySelector(".hours");
+		var minuteHand = document.querySelector(".minutes");
+		var secondHand = document.querySelector(".seconds");
+
+		setInterval(function analogClock(){
+			var currentTime = new Date();
+			var hours = currentTime.getHours();
+			var minutes = currentTime.getMinutes();
+			var seconds = currentTime.getSeconds();
+
+			var secondsDegree = ((seconds / 60) * 360) + 90;
+			var minutesDegree = ((minutes / 60) * 360) + 90;
+			var hoursDegree = (((hours + minutes / 60) / 12) * 360) + 90;
+
+			secondHand.style.transform = `rotate(${secondsDegree}deg)`;
+			minuteHand.style.transform = `rotate(${minutesDegree}deg)`;
+			hourHand.style.transform = `rotate(${hoursDegree}deg)`;
+
+		}, 1000);
+
+
+
+	</script>
+
+	
+	
+
+</body>
+</html>

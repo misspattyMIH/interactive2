@@ -1,0 +1,76 @@
+body {
+	margin: 0;
+	padding: 0;
+	animation: skyDay 10s 1 forwards linear;
+}
+
+#sun {
+	position: absolute;
+	bottom: 0;
+	width: 200px;
+	height: 200px;
+/*	background-color: yellow;*/
+	border-radius: 50%;
+	box-shadow: 0 0 100px orange;
+	left: 200px;
+	animation: sunUp 10s 1 forwards ease-in-out;
+}
+
+#horizon {
+	position: absolute;
+	bottom: 0;
+	width: 100vw;
+	height: 50px;
+	background-color: darkgreen;
+	animation: horizonDay 10s 1 forwards ease-in-out;
+}
+
+#landscape {
+	position: absolute;
+	bottom: 50px;
+	width: 100vw;
+	fill: green;
+	animation: mountainsDay 10s 1 forwards ease-in-out;
+}
+
+/* Keyframe Animation */
+@keyframes skyDay {
+	from {
+		background-color: black;
+	}
+	to {
+		background-color: lightblue;
+	}
+}
+
+@keyframes sunUp {
+	from {
+		bottom: 0;
+		background-color: orange;
+		box-shadow: 0 0 100px red;
+		width: 350px;
+		height: 350px;
+	} to {
+		bottom: 65vh;
+		background-color: yellow;
+		box-shadow: 0 0 100px yellow;
+		width: 250px;
+		height: 250px;
+	}
+}
+
+@keyframes horizonDay {
+	from {
+		background-color: black;
+	} to {
+		background-color: darkgreen;
+	}
+}
+
+@keyframes mountainsDay {
+	from {
+		fill: black;
+	} to {
+		fill: green;
+	}
+}
